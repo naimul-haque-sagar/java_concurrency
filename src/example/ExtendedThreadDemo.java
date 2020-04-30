@@ -5,7 +5,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ExtendedThreadDemo {
-//git test
     public static void main(String[] args) throws InterruptedException {
         ThreadExtende threadExtend = new ThreadExtende();
         threadExtend.setName("Extended Thread");
