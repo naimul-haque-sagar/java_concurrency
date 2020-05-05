@@ -16,7 +16,7 @@ public class ThreadInterrupt {
             }
         });
         t.start();
-        Thread.sleep(1500);
+        Thread.sleep(500);
         t.interrupt();
     }
 
