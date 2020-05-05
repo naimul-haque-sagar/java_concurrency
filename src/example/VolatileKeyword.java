@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class VolatileKeyword {
-
+//git test
     static volatile boolean flag = true;
 
     public static void main(String[] args) throws InterruptedException {
