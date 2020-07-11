@@ -3,7 +3,7 @@ package example;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class ThreadInterrupt {
+public class Interrupt {
 
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(() -> {
@@ -17,6 +17,8 @@ public class ThreadInterrupt {
         });
         t.start();
         Thread.sleep(500);
+        //if target method is never sleep or wait state interrupt will never work
+        //it will only change the flag variable value
         t.interrupt();
     }
 
