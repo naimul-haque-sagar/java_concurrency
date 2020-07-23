@@ -24,7 +24,8 @@ class Student_Caller extends Thread{
         try {
             student.call(name);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            throw new AssertionError(e);
         }
     }
 }

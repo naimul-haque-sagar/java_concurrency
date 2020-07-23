@@ -19,7 +19,8 @@ public class ThreadTermination1 {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                e.printStackTrace();Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         }
     });
@@ -31,7 +32,8 @@ public class ThreadTermination1 {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         }
     });
@@ -43,7 +45,8 @@ public class ThreadTermination1 {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         }
     });

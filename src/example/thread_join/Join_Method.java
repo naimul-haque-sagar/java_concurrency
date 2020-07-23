@@ -24,7 +24,8 @@ class LoadingThread extends Thread{
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         }
     }
@@ -40,7 +41,8 @@ class DownloadThread extends Thread{
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            throw new AssertionError(e);
         }
         System.out.println("Downloaded one file");
     }

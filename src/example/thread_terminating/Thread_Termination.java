@@ -15,6 +15,8 @@ public class Thread_Termination {
                    Thread.sleep(500);
                } catch (InterruptedException ex) {
                    Logger.getLogger(Thread_Termination.class.getName()).log(Level.SEVERE, null, ex);
+                   Thread.currentThread().interrupt();
+                   throw new AssertionError(ex);
                }
            }
         });
@@ -26,6 +28,8 @@ public class Thread_Termination {
                     Thread.sleep(500);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Thread_Termination.class.getName()).log(Level.SEVERE, null, ex);
+                    Thread.currentThread().interrupt();
+                    throw new AssertionError(ex);
                 }
             }
         });

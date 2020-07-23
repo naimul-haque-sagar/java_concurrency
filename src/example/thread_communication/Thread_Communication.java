@@ -21,7 +21,8 @@ class Thread_One extends Thread{
             try {
                 thread_two.wait();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
             System.out.println("Thread one work finished" +
                     " going to main thread");
@@ -42,7 +43,8 @@ class Thread_Two extends Thread{
                         " going to thread one");
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
             this.notify();
         }

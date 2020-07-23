@@ -15,6 +15,8 @@ public class VolatileKeyword {
                     Thread.sleep(500);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(VolatileKeyword.class.getName()).log(Level.SEVERE, null, ex);
+                    Thread.currentThread().interrupt();
+                    throw new AssertionError(ex);
                 }
             }
             System.out.println("Thread stopped");

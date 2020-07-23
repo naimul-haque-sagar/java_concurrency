@@ -32,6 +32,8 @@ class ThreadExtende extends Thread {
                 sleepOneSecond();
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadExtende.class.getName()).log(Level.SEVERE, null, ex);
+                Thread.currentThread().interrupt();
+                throw new AssertionError(ex);
             }
         }
     }

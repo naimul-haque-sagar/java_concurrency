@@ -39,6 +39,8 @@ class MyThread implements Runnable {
                 Thread.sleep(500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(MyThread.class.getName()).log(Level.SEVERE, null, ex);
+                Thread.currentThread().interrupt();
+                throw new AssertionError(ex);
             }
         }
         System.out.println(name + " " + "stopped");

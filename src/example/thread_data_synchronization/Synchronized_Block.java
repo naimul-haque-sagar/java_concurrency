@@ -25,7 +25,8 @@ class ThreadCaller extends Thread{
         try {
             mythread.called(name);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            throw new AssertionError(e);
         }
     }
 }

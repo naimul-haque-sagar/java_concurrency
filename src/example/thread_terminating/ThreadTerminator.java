@@ -15,6 +15,8 @@ public class ThreadTerminator {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(ThreadTerminator.class.getName()).log(Level.SEVERE, null, ex);
+                    Thread.currentThread().interrupt();
+                    throw new AssertionError(ex);
                 }
             }
         });

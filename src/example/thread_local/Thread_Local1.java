@@ -20,7 +20,8 @@ public class Thread_Local1 {
            try {
                setRandomNumber(thread_local1);
            } catch (InterruptedException e) {
-               e.printStackTrace();
+               Thread.currentThread().interrupt();
+               throw new AssertionError(e);
            }
        });
 
@@ -29,12 +30,14 @@ public class Thread_Local1 {
             try {
                 thread.join();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
             try {
                 setRandomNumber(thread_local1);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         });
 
@@ -43,12 +46,14 @@ public class Thread_Local1 {
             try {
                 thread1.join();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
             try {
                 setRandomNumber(thread_local1);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         });
 

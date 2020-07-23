@@ -23,7 +23,8 @@ public class Thread_Local {
             try {
                 sharedValueSetter1.setValue();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         });
 
@@ -33,7 +34,8 @@ public class Thread_Local {
                 SharedValueSetter sharedValueSetter2=new SharedValueSetter(sharedNumber);
                 sharedValueSetter2.setValue();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         });
 
@@ -43,7 +45,8 @@ public class Thread_Local {
                 SharedValueSetter sharedValueSetter3=new SharedValueSetter(sharedNumber);
                 sharedValueSetter3.setValue();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
 
         });

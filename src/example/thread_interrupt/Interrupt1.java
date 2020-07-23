@@ -8,7 +8,8 @@ public class Interrupt1 {
                 try {
                     Thread.sleep(10000);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
+                    throw new AssertionError(e);
                 }
             }
         });

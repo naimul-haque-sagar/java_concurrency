@@ -11,6 +11,8 @@ public class RunnableThreadLambda {
                 doWork();
             } catch (InterruptedException ex) {
                 Logger.getLogger(RunnableThreadLambda.class.getName()).log(Level.SEVERE, null, ex);
+                Thread.currentThread().interrupt();
+                throw new AssertionError(ex);
             }
         });
         t.setName("ONe");
@@ -21,6 +23,8 @@ public class RunnableThreadLambda {
                 doWork();
             } catch (InterruptedException ex) {
                 Logger.getLogger(RunnableThreadLambda.class.getName()).log(Level.SEVERE, null, ex);
+                Thread.currentThread().interrupt();
+                throw new AssertionError(ex);
             }
         });
         t2.setName("Two");

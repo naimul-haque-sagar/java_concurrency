@@ -15,7 +15,8 @@ class MyThread1 extends Thread{
         try {
             thread.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            throw new AssertionError(e);
         }
         for (int i=0;i<5;i++) System.out.println("mythread1");
     }

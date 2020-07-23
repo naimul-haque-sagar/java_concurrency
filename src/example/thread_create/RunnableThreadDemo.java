@@ -34,6 +34,8 @@ class MyRunnable implements Runnable {
                 sleepOneSecond();
             } catch (InterruptedException ex) {
                 Logger.getLogger(MyRunnable.class.getName()).log(Level.SEVERE, null, ex);
+                Thread.currentThread().interrupt();
+                throw new AssertionError(ex);
             }
         }
     }

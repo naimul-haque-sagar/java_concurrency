@@ -16,7 +16,8 @@ class Custom_Thread extends Thread{
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                throw new AssertionError(e);
             }
         }
         throw new RuntimeException("Self made exception");

@@ -13,8 +13,10 @@ public class Watch_Using_Thread {
                 printWatch();
                 try {
                     Thread.sleep(1000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Watch_Using_Thread.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException e) {
+                    Logger.getLogger(Watch_Using_Thread.class.getName()).log(Level.SEVERE, null, e);
+                    Thread.currentThread().interrupt();
+                    throw new AssertionError(e);
                 }
             }
         });
