@@ -8,7 +8,11 @@ thread_daemon
 
 thread_data_synchronization
 
+thread_deadlock
+
 thread_exception_handling
+
+thread_executor_framework
 
 thread_external_locking
 
@@ -18,14 +22,20 @@ thread_interrupt
 
 thread_join
 
+thread_latch_lock
+
 thread_local
 
 thread_priority
+
+thread_race_condition
 
 thread_sleeping
 
 thread_synchronized_collection
 
 thread_terminating
+
+thread_threadpool
 
 thread_volatile
